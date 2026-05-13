@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>اصل آکادمی | وبینارهای فوق‌پریمیوم ۱۴۰۵</title>
+
+  <meta name="description"
+    content="اصل آکادمی — نسل جدید وبینارهای فوق‌پریمیوم برای درآمد، آینده مالی، فرصت‌های شغلی و ساخت ثروت در ۱۴۰۵">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+
+    *{
+      font-family:'Vazirmatn',sans-serif;
+      scroll-behavior:smooth;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html,
+    body{
+      overflow-x:hidden;
+      background:#040816;
+      color:white;
+    }
+
+    body{
+      position:relative;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    ::selection{
+      background:white;
+      color:black;
+    }
+
+    /* ========================= */
+
+    .glass{
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(24px);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+      0 0 40px rgba(255,255,255,.03),
+      inset 0 0 20px rgba(255,255,255,.02);
+    }
+
+    .hero-bg{
+      background:
+      radial-gradient(circle at top right,rgba(168,85,247,.25),transparent 25%),
+      radial-gradient(circle at bottom left,rgba(6,182,212,.18),transparent 30%),
+      radial-gradient(circle at center,rgba(15,23,42,.8),#040816 70%);
+    }
+
+    .gold-card{
+      background:
+      linear-gradient(145deg,rgba(255,215,0,.12),rgba(255,255,255,.02));
+      border:1px solid rgba(255,215,0,.18);
+    }
+
+    .green-card{
+      background:
+      linear-gradient(145deg,rgba(16,185,129,.12),rgba(255,255,255,.02));
+      border:1px solid rgba(16,185,129,.18);
+    }
+
+    .purple-card{
+      background:
+      linear-gradient(145deg,rgba(168,85,247,.12),rgba(255,255,255,.02));
+      border:1px solid rgba(168,85,247,.18);
+    }
+
+    .red-card{
+      background:
+      linear-gradient(145deg,rgba(239,68,68,.12),rgba(255,255,255,.02));
+      border:1px solid rgba(239,68,68,.18);
+    }
+
+    .gradient-btn{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .gradient-btn::before{
+      content:'';
+      position:absolute;
+      inset:-2px;
+      background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.4),
+      transparent
+      );
+
+      animation:shine 5s linear infinite;
+    }
+
+    @keyframes shine{
+      from{
+        transform:translateX(-100%);
+      }
+
+      to{
+        transform:translateX(100%);
+      }
+    }
+
+    .pulse{
+      animation:pulse 2.5s infinite;
+    }
+
+    @keyframes pulse{
+
+      0%{
+        box-shadow:0 0 0 0 rgba(168,85,247,.6);
+      }
+
+      70%{
+        box-shadow:0 0 0 25px rgba(168,85,247,0);
+      }
+
+      100%{
+        box-shadow:0 0 0 0 rgba(168,85,247,0);
+      }
+
+    }
+
+    .floating{
+      animation:floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating{
+
+      0%,100%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-18px);
+      }
+
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(50px);
+      transition:1s;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .mouse-glow{
+      position:fixed;
+      width:400px;
+      height:400px;
+      border-radius:9999px;
+      background:
+      radial-gradient(circle,
+      rgba(168,85,247,.16),
+      transparent 70%);
+
+      pointer-events:none;
+      z-index:0;
+      transform:translate(-50%,-50%);
+      mix-blend-mode:screen;
+    }
+
+    .loader{
+      position:fixed;
+      inset:0;
+      z-index:99999;
+      background:#040816;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:1s;
+    }
+
+    .loader-ring{
+      width:120px;
+      height:120px;
+      border-radius:9999px;
+      border:3px solid rgba(255,255,255,.08);
+      border-top:3px solid #8b5cf6;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    .particle{
+      position:absolute;
+      border-radius:9999px;
+      background:rgba(255,255,255,.14);
+      animation:particle linear infinite;
+    }
+
+    @keyframes particle{
+
+      from{
+        transform:translateY(0);
+      }
+
+      to{
+        transform:translateY(-120vh);
+      }
+
+    }
+
+    /* ========================= */
+    /* RESPONSIVE */
+    /* ========================= */
+
+    @media(max-width:1024px){
+
+      .hero-grid{
+        grid-template-columns:1fr !important;
+        gap:60px !important;
+      }
+
+      .webinar-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+      }
+
+      .testimonial-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr !important;
+        text-align:center;
+      }
+
+      h1{
+        font-size:52px !important;
+        line-height:1.5 !important;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      section{
+        padding-top:70px !important;
+        padding-bottom:70px !important;
+      }
+
+      h1{
+        font-size:36px !important;
+      }
+
+      h2{
+        font-size:30px !important;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .hero-buttons button{
+        width:100%;
+      }
+
+      .countdown-grid{
+        grid-template-columns:1fr 1fr !important;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr 1fr !important;
+      }
+
+      .floating{
+        animation:none !important;
+      }
+
+      .mouse-glow{
+        display:none;
+      }
+
+      .video-preview{
+        border-radius:24px !important;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .mobile-padding{
+        padding-left:18px !important;
+        padding-right:18px !important;
+      }
+
+      h1{
+        font-size:28px !important;
+        line-height:1.8 !important;
+      }
+
+      h2{
+        font-size:24px !important;
+        line-height:1.7 !important;
+      }
+
+      p{
+        font-size:15px !important;
+        line-height:2 !important;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      .countdown-grid{
+        gap:12px !important;
+      }
+
+      .webinar-buttons{
+        flex-direction:column;
+      }
+
+      .webinar-buttons button{
+        width:100%;
+      }
+
+      .hero-card{
+        padding:24px !important;
+      }
+
+      .webinar-card{
+        padding:24px !important;
+      }
+
+      .sticky-mobile{
+        padding:12px;
+        background:linear-gradient(
+        to top,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.3)
+        );
+
+        backdrop-filter:blur(20px);
+      }
+
+      .sticky-mobile button{
+        height:58px;
+        border-radius:20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LOADER -->
+
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- MOUSE GLOW -->
+
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- PARTICLES -->
+
+  <div id="particles"></div>
+
+  <!-- ========================= -->
+  <!-- NAVBAR -->
+  <!-- ========================= -->
+
+  <nav
+    class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/30 backdrop-blur-2xl">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mobile-padding">
+
+      <div class="h-20 flex items-center justify-between">
+
+        <!-- LOGO -->
+
+        <div class="text-2xl sm:text-3xl font-black whitespace-nowrap">
+          اصل آکادمی
+        </div>
+
+        <!-- DESKTOP MENU -->
+
+        <div
+          class="hidden lg:flex items-center gap-10 text-sm text-gray-300">
+
+          <a href="#webinars"
+            class="hover:text-white transition">
+            وبینارها
+          </a>
+
+          <a href="#stats"
+            class="hover:text-white transition">
+            آمار
+          </a>
+
+          <a href="#faq"
+            class="hover:text-white transition">
+            سوالات
+          </a>
+
+          <a href="#testimonials"
+            class="hover:text-white transition">
+            نظرات
+          </a>
+
+        </div>
+
+        <!-- DESKTOP CTA -->
+
+        <div class="hidden lg:flex">
+
+          <button
+            class="gradient-btn pulse px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 font-black shadow-2xl shadow-purple-500/30 hover:scale-105 transition">
+
+            ورود به وبینار
+
+          </button>
+
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+          id="menuBtn"
+          class="lg:hidden w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center">
+
+          <svg
+            id="menuIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+
+    <div
+      id="mobileMenu"
+      class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+
+      <div class="px-4 pb-6">
+
+        <div
+          class="rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-5">
+
+          <div class="flex flex-col gap-3">
+
+            <a href="#webinars"
+              class="mobile-link rounded-2xl px-5 py-4 bg-white/[0.03] hover:bg-white/[0.06] transition">
+              وبینارها
+            </a>
+
+            <a href="#stats"
+              class="mobile-link rounded-2xl px-5 py-4 bg-white/[0.03] hover:bg-white/[0.06] transition">
+              آمار
+            </a>
+
+            <a href="#faq"
+              class="mobile-link rounded-2xl px-5 py-4 bg-white/[0.03] hover:bg-white/[0.06] transition">
+              سوالات متداول
+            </a>
+
+            <a href="#testimonials"
+              class="mobile-link rounded-2xl px-5 py-4 bg-white/[0.03] hover:bg-white/[0.06] transition">
+              نظرات کاربران
+            </a>
+
+          </div>
+
+          <button
+            class="mt-5 w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 font-black">
+
+            ورود فوری به وبینار
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- ========================= -->
+  <!-- HERO -->
+  <!-- ========================= -->
+
+  <section
+    class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-32">
+
+    <div
+      class="max-w-7xl mx-auto px-6 mobile-padding grid lg:grid-cols-2 gap-20 items-center hero-grid relative z-10">
+
+      <!-- LEFT -->
+
+      <div class="reveal">
+
+        <div
+          class="inline-flex hero-badge items-center gap-2 px-5 py-3 rounded-full glass mb-8 text-sm">
+
+          🔥 نسل جدید وبینارهای فوق‌پریمیوم ۱۴۰۵
+
+        </div>
+
+        <h1
+          class="text-6xl font-black leading-[1.4] mb-8">
+
+          آینده مالی،
+          درآمدی و
+          شغلی خودت رو
+          از امروز بساز
+
+        </h1>
+
+        <p
+          class="text-xl text-gray-300 leading-loose mb-10 max-w-2xl">
+
+          وبینارهای فوق‌پریمیوم اصل آکادمی
+          برای کسانی که می‌خواهند در سال ۱۴۰۵
+          چند قدم جلوتر از بقیه باشند.
+
+        </p>
+
+        <div class="flex hero-buttons gap-5">
+
+          <button
+            class="gradient-btn pulse px-8 py-5 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 text-lg font-black shadow-2xl shadow-purple-500/30">
+
+            ورود فوری به وبینارها
+
+          </button>
+
+          <button
+            class="glass px-8 py-5 rounded-2xl text-lg font-bold hover:scale-105 transition">
+
+            مشاهده برنامه‌ها
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="reveal">
+
+        <div
+          class="glass hero-card rounded-[40px] p-8 floating">
+
+          <div
+            class="flex items-center justify-between mb-8">
+
+            <div>
+
+              <div class="text-gray-400 text-sm">
+                ثبت‌نام امروز
+              </div>
+
+              <div class="text-5xl font-black mt-3">
+                +۴۸,۳۰۰
+              </div>
+
+            </div>
+
+            <div
+              class="w-24 h-24 rounded-3xl bg-gradient-to-br from-purple-500 to-cyan-400 blur-[2px]">
+
+            </div>
+
+          </div>
+
+          <div class="space-y-5">
+
+            <div
+              class="glass rounded-3xl p-5 flex justify-between items-center">
+
+              <div>
+
+                <div class="font-black">
+                  بازی پول
+                </div>
+
+                <div class="text-sm text-gray-400 mt-1">
+                  پیش‌بینی بازار ۱۴۰۵
+                </div>
+
+              </div>
+
+              <div class="text-green-400 font-black">
+                LIVE
+              </div>
+
+            </div>
+
+            <div
+              class="glass rounded-3xl p-5 flex justify-between items-center">
+
+              <div>
+
+                <div class="font-black">
+                  استخدام عمان
+                </div>
+
+                <div class="text-sm text-gray-400 mt-1">
+                  فرصت ویژه درآمدی
+                </div>
+
+              </div>
+
+              <div class="text-cyan-400 font-black">
+                HOT
+              </div>
+
+            </div>
+
+            <div
+              class="glass rounded-3xl p-5 flex justify-between items-center">
+
+              <div>
+
+                <div class="font-black">
+                  ۵ شغل پولساز
+                </div>
+
+                <div class="text-sm text-gray-400 mt-1">
+                  درآمد سریع
+                </div>
+
+              </div>
+
+              <div class="text-purple-400 font-black">
+                NEW
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- COUNTDOWN -->
+  <!-- ========================= -->
+
+  <section>
+
+    <div class="max-w-5xl mx-auto px-6 mobile-padding">
+
+      <div
+        class="glass rounded-[40px] p-10 text-center reveal">
+
+        <h2 class="text-5xl font-black mb-6">
+          شروع وبینار ویژه
+        </h2>
+
+        <p class="text-gray-400 mb-10">
+          زمان باقی‌مانده تا شروع رویداد
+        </p>
+
+        <div
+          class="grid grid-cols-4 countdown-grid gap-5">
+
+          <div class="glass rounded-3xl p-6">
+
+            <div id="days"
+              class="text-5xl number font-black">
+              00
+            </div>
+
+            <div class="text-gray-400 mt-2">
+              روز
+            </div>
+
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+
+            <div id="hours"
+              class="text-5xl number font-black">
+              00
+            </div>
+
+            <div class="text-gray-400 mt-2">
+              ساعت
+            </div>
+
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+
+            <div id="minutes"
+              class="text-5xl number font-black">
+              00
+            </div>
+
+            <div class="text-gray-400 mt-2">
+              دقیقه
+            </div>
+
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+
+            <div id="seconds"
+              class="text-5xl number font-black">
+              00
+            </div>
+
+            <div class="text-gray-400 mt-2">
+              ثانیه
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- WEBINARS -->
+  <!-- ========================= -->
+
+  <section id="webinars">
+
+    <div class="max-w-7xl mx-auto px-6 mobile-padding">
+
+      <div class="text-center mb-20 reveal">
+
+        <h2 class="text-5xl font-black mb-6">
+          وبینارهای فوق‌پریمیوم
+        </h2>
+
+        <p class="text-xl text-gray-400">
+          طراحی شده برای نسل آینده درآمد
+        </p>
+
+      </div>
+
+      <div
+        class="grid lg:grid-cols-2 webinar-grid gap-10">
+
+        <!-- CARD 1 -->
+
+        <div
+          class="gold-card webinar-card rounded-[40px] p-10 reveal hover:scale-[1.02] transition duration-500">
+
+          <div
+            class="flex items-start justify-between gap-5 mb-8">
+
+            <h3
+              class="text-4xl title font-black leading-[1.7]">
+
+              وبینار بازی پول در سال ۱۴۰۵
+
+            </h3>
+
+            <div
+              class="w-20 h-20 rounded-3xl bg-yellow-500/20 flex items-center justify-center text-4xl shrink-0">
+
+              💰
+
+            </div>
+
+          </div>
+
+          <div
+            class="space-y-4 items text-lg text-gray-200 mb-10">
+
+            <div>✅ ‌‌پیش‌بینی قیمت طلا و دلار</div>
+            <div>✅ چه کالاهایی امسال بیشتر از طلا سود میدن؟</div>
+            <div>✅ پشت پرده دولت چین</div>
+            <div>✅ پشت پرده رسانه‌ها</div>
+            <div>✅ ۲ شاخص مهم تصمیم گیری مالی در بحران</div>
+
+          </div>
+
+          <div
+            class="glass rounded-3xl p-6 mb-8">
+
+            <div class="font-black text-2xl mb-3">
+              ✅ چه کالاهای امسال بیشتر از طلا سود میدن؟
+            </div>
+
+            <div class="text-gray-300">
+              داخل وبینار امروز می‌‌فهمی 👇
+            </div>
+
+          </div>
+
+          <div class="text-red-400 text-lg mb-8">
+            ❌ وبینار “بازی پول در سال ۱۴۰۵” شروع شد…
+          </div>
+
+          <div class="flex webinar-buttons gap-4">
+
+            <button
+              class="gradient-btn px-6 py-4 rounded-2xl bg-yellow-500 text-black font-black flex-1">
+
+              لینک وبینار
+
+            </button>
+
+            <button
+              class="glass px-6 py-4 rounded-2xl font-bold">
+
+              ساعت برگزاری
+
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div
+          class="green-card webinar-card rounded-[40px] p-10 reveal hover:scale-[1.02] transition duration-500">
+
+          <div
+            class="flex items-start justify-between gap-5 mb-8">
+
+            <h3
+              class="text-4xl title font-black leading-[1.7]">
+
+              وبینار استخدام در عمان
+
+            </h3>
+
+            <div
+              class="w-20 h-20 rounded-3xl bg-emerald-500/20 flex items-center justify-center text-4xl shrink-0">
+
+              🌍
+
+            </div>
+
+          </div>
+
+          <div
+            class="space-y-4 items text-lg text-gray-200 mb-10">
+
+            <div>✅ استخدام ۴۰ نفر با حقوق ۴۰۰ ریال عمانی</div>
+            <div>✅ استخدام غیرحضوری با حقوق ۴۰۰ ریال عمانی</div>
+            <div>✅ فرصت استخدام در عمان</div>
+            <div>✅ شغل دوم با نت ملی</div>
+            <div>✅ از بازی کردن پول دربیار</div>
+            <div>✅ وام ۱۰۰ میلیونی برای ۴۰ نفر</div>
+
+          </div>
+
+          <div
+            class="glass rounded-3xl p-6 mb-8">
+
+            <div class="font-black text-2xl mb-3">
+              ✅ استخدام ۴۰ نفر غیرحضوری
+            </div>
+
+            <div class="text-gray-300">
+              شرایط استخدام امروز در وبینار
+            </div>
+
+          </div>
+
+          <div class="text-red-400 text-lg mb-8">
+            ❌ وبینار استخدام در عمان شروع شد…
+          </div>
+
+          <div class="flex webinar-buttons gap-4">
+
+            <button
+              class="gradient-btn px-6 py-4 rounded-2xl bg-emerald-500 text-black font-black flex-1">
+
+              لینک وبینار
+
+            </button>
+
+            <button
+              class="glass px-6 py-4 rounded-2xl font-bold">
+
+              ساعت برگزاری
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section id="stats">
+
+    <div class="max-w-7xl mx-auto px-6 mobile-padding">
+
+      <div
+        class="grid grid-cols-4 stats-grid gap-6">
+
+        <div
+          class="glass rounded-[32px] p-10 text-center reveal">
+
+          <div class="text-5xl font-black mb-4">
+            +۴۸K
+          </div>
+
+          <div class="text-gray-400">
+            شرکت‌کننده
+          </div>
+
+        </div>
+
+        <div
+          class="glass rounded-[32px] p-10 text-center reveal">
+
+          <div class="text-5xl font-black mb-4">
+            ۹۶٪
+          </div>
+
+          <div class="text-gray-400">
+            رضایت کاربران
+          </div>
+
+        </div>
+
+        <div
+          class="glass rounded-[32px] p-10 text-center reveal">
+
+          <div class="text-5xl font-black mb-4">
+            ۴
+          </div>
+
+          <div class="text-gray-400">
+            وبینار ویژه
+          </div>
+
+        </div>
+
+        <div
+          class="glass rounded-[32px] p-10 text-center reveal">
+
+          <div class="text-5xl font-black mb-4">
+            +۷۰M
+          </div>
+
+          <div class="text-gray-400">
+            فرصت درآمدی
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+
+  <section id="testimonials">
+
+    <div class="max-w-7xl mx-auto px-6 mobile-padding">
+
+      <div class="text-center mb-20 reveal">
+
+        <h2 class="text-5xl font-black mb-6">
+          نظرات کاربران
+        </h2>
+
+      </div>
+
+      <div
+        class="grid lg:grid-cols-3 testimonial-grid gap-8">
+
+        <div
+          class="glass rounded-[35px] p-8 reveal">
+
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+
+          <p class="text-gray-300 leading-loose mb-6">
+            بهترین تجربه وبینار آنلاین که تا حالا داشتم.
+          </p>
+
+          <div class="font-black">
+            محمد رضایی
+          </div>
+
+        </div>
+
+        <div
+          class="glass rounded-[35px] p-8 reveal">
+
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+
+          <p class="text-gray-300 leading-loose mb-6">
+            کیفیت طراحی و محتوا در سطح بین‌المللی بود.
+          </p>
+
+          <div class="font-black">
+            فاطمه احمدی
+          </div>
+
+        </div>
+
+        <div
+          class="glass rounded-[35px] p-8 reveal">
+
+          <div class="text-yellow-400 text-2xl mb-5">
+            ★★★★★
+          </div>
+
+          <p class="text-gray-300 leading-loose mb-6">
+            دید من نسبت به درآمد و آینده کاملا تغییر کرد.
+          </p>
+
+          <div class="font-black">
+            امیر کریمی
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section id="faq">
+
+    <div class="max-w-5xl mx-auto px-6 mobile-padding">
+
+      <div class="text-center mb-16 reveal">
+
+        <h2 class="text-5xl font-black mb-6">
+          سوالات متداول
+        </h2>
+
+      </div>
+
+      <div class="space-y-6">
+
+        <div
+          class="glass faq-card rounded-[30px] p-8 reveal">
+
+          <div class="font-black text-2xl mb-4">
+            وبینارها آنلاین هستند؟
+          </div>
+
+          <div class="text-gray-400 leading-loose">
+            بله، تمام وبینارها آنلاین و قابل مشاهده در موبایل هستند.
+          </div>
+
+        </div>
+
+        <div
+          class="glass faq-card rounded-[30px] p-8 reveal">
+
+          <div class="font-black text-2xl mb-4">
+            فایل ضبط شده ارائه می‌شود؟
+          </div>
+
+          <div class="text-gray-400 leading-loose">
+            بله، نسخه ضبط شده در اختیار کاربران قرار می‌گیرد.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer
+    class="py-20 border-t border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6 mobile-padding">
+
+      <div
+        class="grid lg:grid-cols-2 footer-grid gap-12 items-center">
+
+        <div>
+
+          <div class="text-4xl font-black mb-6">
+            اصل آکادمی
+          </div>
+
+          <p class="text-gray-400 leading-loose max-w-xl">
+            آینده برای کسانی است که زودتر تصمیم می‌گیرند.
+          </p>
+
+        </div>
+
+        <div class="flex lg:justify-end">
+
+          <button
+            class="gradient-btn pulse footer-cta px-10 py-5 rounded-3xl bg-gradient-to-r from-purple-600 to-cyan-500 text-xl font-black">
+
+            ورود به وبینار
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- MOBILE CTA -->
+
+  <div
+    class="fixed bottom-0 left-0 right-0 z-50 md:hidden sticky-mobile">
+
+    <button
+      class="w-full bg-gradient-to-r from-purple-600 to-cyan-500 font-black text-lg shadow-2xl shadow-purple-500/30">
+
+      ورود فوری به وبینار
+
+    </button>
+
+  </div>
+
+  <!-- NOTIFICATION -->
+
+  <div
+    id="notification"
+    class="fixed top-28 left-4 z-50 glass rounded-2xl p-5 w-80 hidden">
+
+    <div class="font-black mb-2">
+      🔥 ثبت‌نام جدید
+    </div>
+
+    <div class="text-sm text-gray-400">
+      یک کاربر جدید وارد وبینار شد.
+    </div>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- SCRIPTS -->
+  <!-- ========================= -->
+
+  <script>
+
+    // LOADER
+
+    window.addEventListener('load',()=>{
+
+      setTimeout(()=>{
+
+        document.getElementById('loader').style.opacity='0';
+
+        setTimeout(()=>{
+
+          document.getElementById('loader').style.display='none';
+
+        },1000);
+
+      },1200);
+
+    });
+
+    // MOBILE MENU
+
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
+
+    let menuOpen=false;
+
+    menuBtn.addEventListener('click',()=>{
+
+      menuOpen=!menuOpen;
+
+      if(menuOpen){
+
+        mobileMenu.style.maxHeight='500px';
+
+      }else{
+
+        mobileMenu.style.maxHeight='0px';
+
+      }
+
+    });
+
+    // CLOSE MOBILE MENU
+
+    document.querySelectorAll('.mobile-link').forEach(link=>{
+
+      link.addEventListener('click',()=>{
+
+        mobileMenu.style.maxHeight='0px';
+
+        menuOpen=false;
+
+      });
+
+    });
+
+    // REVEAL
+
+    const reveals=document.querySelectorAll('.reveal');
+
+    function revealOnScroll(){
+
+      reveals.forEach(r=>{
+
+        const top=r.getBoundingClientRect().top;
+
+        if(top<window.innerHeight-100){
+
+          r.classList.add('active');
+
+        }
+
+      });
+
+    }
+
+    window.addEventListener('scroll',revealOnScroll);
+
+    revealOnScroll();
+
+    // MOUSE GLOW
+
+    const glow=document.getElementById('mouseGlow');
+
+    window.addEventListener('mousemove',(e)=>{
+
+      glow.style.left=e.clientX+'px';
+      glow.style.top=e.clientY+'px';
+
+    });
+
+    // COUNTDOWN
+
+    const targetDate=new Date();
+
+    targetDate.setDate(targetDate.getDate()+5);
+
+    function updateCountdown(){
+
+      const now=new Date();
+
+      const diff=targetDate-now;
+
+      const days=Math.floor(diff/(1000*60*60*24));
+      const hours=Math.floor((diff/(1000*60*60))%24);
+      const minutes=Math.floor((diff/(1000*60))%60);
+      const seconds=Math.floor((diff/1000)%60);
+
+      document.getElementById('days').innerText=days;
+      document.getElementById('hours').innerText=hours;
+      document.getElementById('minutes').innerText=minutes;
+      document.getElementById('seconds').innerText=seconds;
+
+    }
+
+    setInterval(updateCountdown,1000);
+
+    // PARTICLES
+
+    const particles=document.getElementById('particles');
+
+    for(let i=0;i<45;i++){
+
+      const p=document.createElement('div');
+
+      p.classList.add('particle');
+
+      const size=Math.random()*6+2;
+
+      p.style.width=size+'px';
+      p.style.height=size+'px';
+
+      p.style.left=Math.random()*100+'vw';
+
+      p.style.bottom='-20px';
+
+      p.style.animationDuration=(Math.random()*10+10)+'s';
+
+      p.style.opacity=Math.random();
+
+      particles.appendChild(p);
+
+    }
+
+    // NOTIFICATION
+
+    const notification=document.getElementById('notification');
+
+    setInterval(()=>{
+
+      notification.classList.remove('hidden');
+
+      setTimeout(()=>{
+
+        notification.classList.add('hidden');
+
+      },4000);
+
+    },9000);
+
+  </script>
+
+</body>
+
+</html>
